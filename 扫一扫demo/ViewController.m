@@ -5,7 +5,8 @@
 //  Created by Alion on 16/12/28.
 //  Copyright © 2016年 Alion. All rights reserved.
 //
-
+#define SCREEN_WIDTH                [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT               [[UIScreen mainScreen] bounds].size.height
 #import "ViewController.h"
 #import "KBScanQrcodeViewController.h"
 
@@ -24,7 +25,7 @@
 -(void)initUI{
     
     self.title = @"扫一扫跳转页面";
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(50, 100, 300, 300)];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(50, 100, SCREEN_WIDTH - 100, 300)];
     label.numberOfLines = 0;
     label.font = [UIFont systemFontOfSize:20];
     label.textColor = [UIColor redColor];
@@ -42,7 +43,7 @@
  **/
     [self.view addSubview:label];
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 400, 200, 50);
+    button.frame = CGRectMake(100, 400, SCREEN_WIDTH - 200, 50);
     button.backgroundColor = [UIColor greenColor];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [button setTitle:@"点击进入扫一扫" forState:UIControlStateNormal];
